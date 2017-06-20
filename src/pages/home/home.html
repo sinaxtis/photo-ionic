@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <h3>Crazy Girlfriend</h3>
+  <ion-card *ngIf="base64Image">
+     <ion-card-content *ngIf="base64Image">
+       <img [src]="base64Image" *ngIf="base64Image" />
+       <ion-item *ngIf="base64Image">Latitud: {{latitud}}</ion-item> 
+       <ion-item *ngIf="base64Image">Longitud: {{longitud}}</ion-item>
+     </ion-card-content>
+   </ion-card>
+    <button ion-button (click)="takePicture()" *ngIf="!base64Image">Take a Picture</button>
+    <button ion-button (click) ="sendPhoto()" *ngIf="base64Image">Send Photo</button>
+    <button ion-button (click) ="cancelPhoto()" *ngIf="base64Image">Cancel</button>
+</ion-content>

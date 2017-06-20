@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngFor="let item of items"><br><br><br><br>
+  <div *ngFor="let part of item">
+  <ion-card *ngIf="part.picture">
+    <ion-card-content *ngIf="part.picture">
+       <img [src]="part.picture" *ngIf="part.picture" />
+       <ion-item *ngIf="part.picture">Latitud: {{part.latitud}}</ion-item> 
+       <ion-item>Longitud: {{part.longitud}}</ion-item>
+    </ion-card-content>
+  </ion-card>
+  </div>
+</ion-content>
